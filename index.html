@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      type="imgage/x-icon"
+      href="./assets/images/favicon.png"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./assets/css/style.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./assets/css/cardDetail.css"
+    />
+    <title>BLA Together We Care | กรุงเทพประกันชีวิต</title>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="BLA Together We Care | กรุงเทพประกันชีวิต" />
+    <meta
+      property="og:description"
+      content="BLA Together We Care | กรุงเทพประกันชีวิต"
+    />
+    <meta
+      property="og:image"
+      content="./assets/images/bla_together_we_care_og_image.jpg"
+    />
+  </head>
+  <body class="cardDetail">
+    <div id="cardDetail"></div>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="//unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/pdpa.js"></script>
+
+    <script type="text/babel">
+      const App = () => {
+        // const queryString = window.location.search;
+        // const urlParams = new URLSearchParams(queryString);
+        // const id = urlParams.get("id");
+
+        // const idcard = {
+        //   Id: id,
+        // };
+        // axios
+        //   .post("/th/api/GetCardImage", idcard)
+        //   .then((res) => {
+        //     const cardImg = document.getElementById("cardImg");
+        //     cardImg.setAttribute("src", res.data.image);
+        //   })
+        //   .catch((error) => {
+        //     console.log(error);
+        //   });
+        return (
+          <div className="container">
+            <Content />
+            <Footer />
+          </div>
+        );
+      };
+
+      const Content = () => {
+        return (
+          <div className="content">
+            <div className="logo">
+              <img src="./assets/images/bla_logo.png" />
+            </div>
+            <div className="card">
+              <div>
+                <img id="cardImg" src="./assets/images/card-render-1.png" alt="Card Image" />
+                <div className="btn">
+                  <a href="/">
+                    <button className="btn-next" href="/">
+                      เข้าสู่เว็บไซต์
+                    </button>
+                  </a>
+                </div>
+              </div>
+              <img
+                className="bg-balloon"
+                src="./assets/images/bg-card-detail.png"
+              />
+              <img
+                className="bg-balloon-sm"
+                src="./assets/images/bg-card-detail-sm.png"
+              />
+            </div>
+          </div>
+        );
+      };
+
+      const Footer = () => {
+        return (
+          <div className="footer-content">
+            <div className="footer">
+              <p>
+                สงวนลิขสิทธิ์ พ.ศ.2566 บริษัท กรุงเทพประกันชีวิต จำกัด (มหาชน)
+              </p>
+              <img src="./assets/images/logo-footer.png" />
+            </div>
+          </div>
+        );
+      };
+      ReactDOM.render(<App />, document.getElementById("cardDetail"));
+    </script>
+  </body>
+</html>
